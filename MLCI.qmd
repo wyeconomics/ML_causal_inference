@@ -155,6 +155,7 @@ $$
 ## Ridge Regressions and LASSO
 
 Details are in my [web document](https://wyeconomics.github.io/ML_intro/ML_Python.html#penalized-regressions).
+
 ::::{.columns}
 :::{.column width="50%"}
 ### Ridge
