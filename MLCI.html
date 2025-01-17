@@ -326,24 +326,22 @@ Loss(\beta;\alpha) = MSE + \alpha\cdot\sum_{k=1}^K||\beta_k||
 </section>
 <section id="ridge-regressions-and-lasso" class="slide level2">
 <h2>Ridge Regressions and LASSO</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="ridge">Ridge</h3>
-<p><span class="math display">\[
+<p>Details are in my <a href="https://wyeconomics.github.io/ML_intro/ML_Python.html#penalized-regressions">web document</a>. ::::{.columns} :::{.column width=“50%”} ### Ridge <span class="math display">\[
 Loss(\beta; \alpha) = MSE + \alpha\cdot\sum_{k=1}^K\beta_k^2
 \]</span></p>
 <h3 id="lasso">LASSO</h3>
 <p><span class="math display">\[
 Loss(\beta; \alpha) = MSE + \alpha\cdot\sum_{k=1}^K|\beta_k|
 \]</span></p>
-</div><div class="column" style="width:50%;">
+<p>:::</p>
+<div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="figures/lasso_ridge.png"></p>
 <figcaption>(Figure from Datacamp)</figcaption>
 </figure>
 </div>
-</div></div>
+</div><p>::::</p>
 <div class="fragment">
 <ul>
 <li>Here, <span class="math inline">\(\alpha\)</span> is called a <em>hyperparameter</em>, a parameter that we choose to optimize the prediction.</li>
@@ -1447,15 +1445,15 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <pre><code># A tibble: 206 × 2
    .pred_class truth
    &lt;fct&gt;       &lt;fct&gt;
- 1 2           2    
- 2 2           2    
- 3 4           2    
+ 1 4           2    
+ 2 4           2    
+ 3 2           2    
  4 2           2    
- 5 2           2    
- 6 2           2    
- 7 4           4    
- 8 4           4    
- 9 2           2    
+ 5 4           4    
+ 6 4           4    
+ 7 2           2    
+ 8 2           2    
+ 9 4           4    
 10 2           2    
 # ℹ 196 more rows</code></pre>
 </div>
@@ -1962,8 +1960,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div class="cell-output cell-output-stdout">
 <pre><code>          Truth
 Prediction   2   4
-         2 128   2
-         4   6  70</code></pre>
+         2 127   2
+         4   7  70</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a><span class="co"># Accuracy</span></span>
 <span id="cb29-2"><a href=""></a><span class="fu">accuracy</span>(pred, <span class="at">estimate =</span> .pred_class, <span class="at">truth =</span> truth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1971,7 +1969,7 @@ Prediction   2   4
 <pre><code># A tibble: 1 × 3
   .metric  .estimator .estimate
   &lt;chr&gt;    &lt;chr&gt;          &lt;dbl&gt;
-1 accuracy binary         0.961</code></pre>
+1 accuracy binary         0.956</code></pre>
 </div>
 </div>
 </div>
@@ -2137,7 +2135,8 @@ Y_i^* = \begin{cases}
 Y_i/p &amp;(W_i=1)\\
 -Y_i/(1-p) &amp;(W_i=0)
 \end{cases}
-\]</span> where <span class="math inline">\(p=N_{treat}/N\)</span> is the treatment probability independent of the covariates.</p>
+\]</span> where <span class="math inline">\(p=N_{treat}/N\)</span></p>
+<p>is the treatment probability independent of the covariates.</p>
 <p>Straightforward that <span class="math display">\[
 E[Y_i^*|X_i=x] = \tau_i(x)
 \]</span></p>
@@ -2149,7 +2148,8 @@ E[Y_i^*|X_i=x] = \tau_i(x)
 <p><span class="math display">\[
 \hat{MSE}(S^{tr}, S^{tr}, \Pi) = \frac{1}{N^{tr}}\sum_{i \in S^{tr}}\{(Y_i^* - \hat{\tau}(X_i;S^{tr}, \Pi))^2 - Y_i^{*2}\}
 \]</span></p>
-<p>where <span class="math inline">\(\hat{\tau}(X_i; S^{tr}, \Pi)\)</span> is similarily defined as in the next slide, but only made with the <span class="math inline">\(S^{tr}\)</span> samples.</p>
+<p>where <span class="math inline">\(\hat{\tau}(X_i; S^{tr}, \Pi)\)</span></p>
+<p>is similarily defined as in the next slide, but only made with the <span class="math inline">\(S^{tr}\)</span> samples.</p>
 <p><strong>RMK)</strong> In each leaf, there must be at least one treated observation and one controlled observation in the <span class="math inline">\(S^{est}\)</span> set to estimate <span class="math inline">\(\tau(x)\)</span>.</p>
 </section>
 <section id="leaf-effects" class="slide level2">
