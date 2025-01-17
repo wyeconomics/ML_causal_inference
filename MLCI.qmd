@@ -8,13 +8,14 @@ format: clean-revealjs
     # fontsize: 20pt 
 ---
 
+
+## Agenda
 ```{css, echo=FALSE}
 .my_class1 {
 height: 200px;
 }
 ```
 
-## Agenda
 * <p style="font-size: 30px;">Penalized Regressions</p>
   - <p style="font-size: 30px;">Ridge Regression and LASSO</p>
 
