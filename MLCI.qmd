@@ -813,6 +813,7 @@ rpart.plot(
 ### Documents
 - [Causal Tree Documentation](https://github.com/susanathey/causalTree/blob/master/briefintro.pdf)
 - [GCSI Lab Tutorial](https://bookdown.org/stanfordgsbsilab/ml-ci-tutorial/hte-i-binary-treatment.html#data-driven-hypotheses)
+- [My Tutorial!](https://wyeconomics.github.io/ML_intro/ML_Python.html)
 
 ### Courses
 - [ML & CI: A Short Course](https://www.gsb.stanford.edu/faculty-research/labs-initiatives/sil/research/methods/ai-machine-learning/short-course)
